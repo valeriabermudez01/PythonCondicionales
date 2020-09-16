@@ -1,5 +1,5 @@
 import pytest
-from condicionales import edad
+from Ejercicio1 import edad
 
 def test_edad():
     assert edad(11,2010) == 71 
