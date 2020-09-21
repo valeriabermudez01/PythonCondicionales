@@ -57,3 +57,25 @@ class Triangulo:
         elif ((self.lado1 != self.lado2) and (self.lado2 != self.lado3) and (self.lado1 != self.lado3)):
             tipo = "Escaleno"
         return tipo
+    
+class Rectangulo:
+    def __init__(self, punto1, punto2, punto3, punto4):
+        if punto1.hallar_distancia(punto2) == punto3.hallar_distancia(punto4):
+            if punto1.hallar_distancia(punto3) == punto2.hallar_distancia(punto4):
+                self.lado1 = punto1.hallar_distancia(punto2)
+                self.lado2 = punto1.hallar_distancia(punto3)
+            elif punto1.hallar_distancia(punto4) == punto2.hallar_distancia(punto3):
+                self.lado1 = punto1.hallar_distancia(punto2)
+                self.lado2 = punto1.hallar_distancia(punto4)
+        elif punto1.hallar_distancia(punto3) == punto2.hallar_distancia(punto4):
+            if punto1.hallar_distancia(punto4) == punto3.hallar_distancia(punto2):
+                self.lado1 = punto1.hallar_distancia(punto3)
+                self.lado2 = punto1.hallar_distancia(punto4)
+    
+    def hallar_area_rectangulo(self):
+        area = self.lado1 * self.lado2
+        return area
+
+    def hallar_perimetro_rectangulo(self):
+        perimetro = (self.lado1 * 2) + (self.lado2 * 2)
+        return perimetro
